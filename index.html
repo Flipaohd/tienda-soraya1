@@ -148,34 +148,208 @@ footer{background:var(--dark);color:rgba(255,255,255,0.7);padding:60px 30px 30px
 .btn-modal{width:100%;padding:14px;background:var(--dark);color:var(--white);border:none;font-family:'Jost',sans-serif;font-size:12px;letter-spacing:2px;text-transform:uppercase;cursor:pointer;font-weight:600;margin-top:8px;}
 .btn-modal:hover{background:var(--gold);color:var(--dark);}
 .modal-pay{background:var(--rose-light);padding:12px;margin-top:14px;font-size:12px;color:var(--mid);line-height:1.7;border-left:3px solid var(--gold);}
+/* LOGIN */
+.overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.7);z-index:20000;align-items:center;justify-content:center;padding:20px;}
+.overlay.open{display:flex;}
+.login-box{background:var(--white);padding:50px 40px;width:100%;max-width:420px;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,0.25);}
+.login-box h3{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:400;margin-bottom:24px;}
+.login-error{color:#c00;font-size:13px;margin-bottom:14px;display:none;}
+/* ADMIN */
+.admin-panel{background:var(--white);width:100%;max-width:920px;max-height:92vh;overflow-y:auto;box-shadow:0 20px 80px rgba(0,0,0,0.3);}
+.admin-header{background:var(--dark);color:var(--white);padding:22px 32px;display:flex;justify-content:space-between;align-items:center;}
+.admin-header h2{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:400;letter-spacing:2px;}
+.admin-body{padding:28px 32px;}
+.admin-tabs{display:flex;margin-bottom:28px;border-bottom:2px solid var(--border);}
+.admin-tab{padding:11px 20px;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;font-weight:500;color:#888;border-bottom:2px solid transparent;margin-bottom:-2px;transition:all 0.2s;}
+.admin-tab.active{color:var(--gold);border-bottom-color:var(--gold);}
+.tab-content{display:none;}.tab-content.active{display:block;}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;}
+.form-group{margin-bottom:16px;}
+.form-group label{display:block;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:#888;margin-bottom:8px;font-weight:500;}
+.form-group input,.form-group select,.form-group textarea{width:100%;padding:11px 14px;border:1px solid var(--border);font-family:'Jost',sans-serif;font-size:14px;outline:none;background:var(--white);}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--gold);}
+.form-group textarea{resize:vertical;min-height:90px;}
+.btn-save{padding:13px 32px;background:var(--gold);color:var(--dark);border:none;font-family:'Jost',sans-serif;font-size:11px;letter-spacing:2px;text-transform:uppercase;cursor:pointer;font-weight:700;}
+.btn-outline{display:inline-block;padding:11px 24px;border:1px solid var(--border);color:var(--mid);font-size:11px;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;background:var(--white);font-family:'Jost',sans-serif;}
+/* ADMIN PRODUCT LIST */
+.admin-prod-row{display:flex;align-items:center;gap:14px;padding:14px;border:1px solid var(--border);margin-bottom:8px;background:var(--white);}
+.admin-prod-img{width:54px;height:68px;background:var(--rose-light);flex-shrink:0;overflow:hidden;display:flex;align-items:center;justify-content:center;font-size:22px;}
+.admin-prod-img img{width:100%;height:100%;object-fit:contain;}
+.admin-prod-info{flex:1;}
+.admin-prod-info strong{font-size:14px;display:block;margin-bottom:3px;}
+.admin-prod-info .sub{font-size:11px;color:#aaa;text-transform:uppercase;letter-spacing:1px;}
+.admin-prod-info .prc{color:var(--gold);font-weight:600;font-size:15px;}
+.btn-del{padding:9px 18px;background:#fff;border:2px solid #e55;color:#e55;cursor:pointer;font-family:'Jost',sans-serif;font-size:12px;font-weight:600;letter-spacing:1px;text-transform:uppercase;transition:all 0.2s;flex-shrink:0;}
+.btn-del:hover{background:#e55;color:#fff;}
+.btn-edit{padding:9px 18px;background:#fff;border:2px solid var(--gold);color:var(--gold);cursor:pointer;font-family:'Jost',sans-serif;font-size:12px;font-weight:600;letter-spacing:1px;text-transform:uppercase;transition:all 0.2s;flex-shrink:0;}
+.btn-edit:hover{background:var(--gold);color:var(--dark);}
+.edit-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.75);z-index:30000;align-items:center;justify-content:center;padding:20px;}
+.edit-overlay.open{display:flex;}
+.edit-box{background:var(--white);width:100%;max-width:620px;max-height:92vh;overflow-y:auto;box-shadow:0 20px 80px rgba(0,0,0,0.35);}
+.edit-head{background:var(--dark);color:var(--white);padding:20px 28px;display:flex;justify-content:space-between;align-items:center;}
+.edit-head h3{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:400;letter-spacing:2px;}
+.edit-body{padding:28px;}
+/* CONTACT / ABOUT / PAYMENT */
+.contact-grid{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:50px;}
+.contact-detail{display:flex;align-items:flex-start;gap:14px;margin-bottom:20px;}
+.contact-icon{width:44px;height:44px;background:var(--rose-light);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:18px;}
+.about-content{max-width:800px;margin:0 auto;text-align:center;}
+.about-content p{font-size:15px;color:#666;line-height:2;margin-bottom:24px;}
+.about-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;margin:50px 0;}
+.stat{text-align:center;}
+.stat-num{font-family:'Cormorant Garamond',serif;font-size:52px;color:var(--gold);font-weight:300;}
+.stat-label{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:#888;margin-top:8px;}
+.pay-card{background:var(--white);border:1px solid var(--border);padding:28px;margin-bottom:20px;display:flex;gap:20px;}
+.pay-card-icon{width:56px;height:56px;background:var(--rose-light);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0;}
+.pay-card h3{font-family:'Cormorant Garamond',serif;font-size:22px;margin-bottom:8px;}
+.pay-card p{font-size:14px;color:#888;line-height:1.8;}
+.pay-detail{background:var(--cream);padding:14px 18px;margin-top:12px;border-left:3px solid var(--gold);font-size:13px;line-height:1.9;}
+.toast{position:fixed;bottom:28px;right:28px;background:var(--dark);color:var(--white);padding:14px 24px;font-size:13px;z-index:99999;opacity:0;transform:translateY(20px);transition:all 0.3s;pointer-events:none;border-left:3px solid var(--gold);}
+.toast.show{opacity:1;transform:translateY(0);}
+@media(max-width:900px){.features-grid{grid-template-columns:repeat(2,1fr);}.footer-grid{grid-template-columns:1fr 1fr;}.modal{grid-template-columns:1fr;}.modal-img{height:220px;}.contact-grid{grid-template-columns:1fr;}}
+@media(max-width:600px){.header-inner{grid-template-columns:auto 1fr auto;}.logo-main{font-size:18px;}.features-grid{grid-template-columns:1fr 1fr;}.nav-inner{overflow-x:auto;justify-content:flex-start;}.footer-grid{grid-template-columns:1fr;}.form-row{grid-template-columns:1fr;}.about-stats{grid-template-columns:1fr 1fr;}}
+</style>
+</head>
+<body>
 
-/* LOGIN POPUP ORIGINAL */
-<div class="overlay" id="loginOverlay">
-  <div class="login-box">
-    <button class="modal-close" onclick="closeLogin()" style="position:absolute;top:15px;right:15px;">×</button>
-    <h3>Acceso de Administración</h3>
-    <div class="login-error" id="loginError">Código PIN incorrecto</div>
-    <div class="form-group" style="text-align:left;">
-      <label>Ingresa tu Código PIN</label>
-      <input type="password" id="pinInput" placeholder="••••" style="text-align:center;font-size:20px;letter-spacing:4px;">
+<div class="topbar">✦ Desde 1991 tu perfumería de confianza · Envíos a toda España · Atención personalizada ✦</div>
+
+<header>
+  <div class="header-inner">
+    <div class="header-left">
+      <button class="header-icon" onclick="showToast('🔍 Usa el menú para explorar categorías')">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>Buscar
+      </button>
     </div>
-    <button class="btn-modal" onclick="checkPin()">Validar Acceso</button>
+    <div class="logo" onclick="goPage('home')">
+      <div class="logo-main">Soraya</div>
+      <div class="logo-sub">Perfumes &amp; Cosméticos</div>
+    </div>
+    <div class="header-right">
+      <button class="header-icon" onclick="openLogin()">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        <span id="loginLabel">Cuenta</span>
+      </button>
+      <div class="cart-wrap">
+        <button class="header-icon" onclick="openCart()">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>Carro
+        </button>
+        <div class="cart-badge" id="cartBadge">0</div>
+      </div>
+    </div>
   </div>
-</div>
+</header>
 
-<div class="overlay" id="adminContainerOverlay" style="display:none;">
-  <div id="secureAdminInjection"></div>
-</div>
+<nav>
+  <div class="nav-inner">
+    <div class="nav-item"><span class="nav-link" onclick="goPage('home')">Inicio</span></div>
+    <div class="nav-item">
+      <span class="nav-link">Perfumería ▾</span>
+      <div class="dropdown">
+        <a onclick="goShop('perfumes-mujer')">Perfumes Mujer</a>
+        <a onclick="goShop('perfumes-hombre')">Perfumes Hombre</a>
+        <a onclick="goShop('perfumes-unisex')">Unisex &amp; Árabes</a>
+        <a onclick="goShop('agua-colonia')">Agua de Colonia</a>
+      </div>
+    </div>
+    <div class="nav-item">
+      <span class="nav-link">Cosmética ▾</span>
+      <div class="dropdown">
+        <a onclick="goShop('cremas')">Cremas &amp; Tratamientos</a>
+        <a onclick="goShop('maquillaje')">Maquillaje</a>
+        <a onclick="goShop('cuidado-corporal')">Cuidado Corporal</a>
+      </div>
+    </div>
+    <div class="nav-item">
+      <span class="nav-link">Moda ▾</span>
+      <div class="dropdown">
+        <a onclick="goShop('bolsos')">Bolsos &amp; Carteras</a>
+        <a onclick="goShop('bisuteria')">Bisutería</a>
+        <a onclick="goShop('moda-mujer')">Moda Mujer</a>
+      </div>
+    </div>
+    <div class="nav-item">
+      <span class="nav-link">Sets Regalo ▾</span>
+      <div class="dropdown">
+        <a onclick="goShop('sets-regalo')">Ver todos</a>
+      </div>
+    </div>
+    <div class="nav-item"><span class="nav-link" onclick="goPage('about')">Quiénes Somos</span></div>
+    <div class="nav-item"><span class="nav-link" onclick="goPage('contact')">Contacto</span></div>
+    <div class="nav-item"><span class="nav-link" onclick="goPage('payment')" style="color:var(--gold-light)">💳 Cómo Pagar</span></div>
+  </div>
+</nav>
 
-/* RE-ESTABLECIMIENTO DE LAS SECCIONES ORIGINALES */
-<div class="page" id="page-shop">
+<div class="page active" id="page-home">
+  <div class="hero">
+    <div class="hero-deco" style="width:400px;height:400px"></div>
+    <div class="hero-deco" style="width:650px;height:650px"></div>
+    <div class="hero-content">
+      <div class="hero-eyebrow">Desde 1991 · Tu perfumería de confianza</div>
+      <h1 class="hero-title">El arte de<br><em>oler bien</em></h1>
+      <p class="hero-desc">Perfumes exclusivos, cosmética de calidad y moda con estilo. Tu belleza, nuestra pasión.</p>
+      <button class="btn-hero filled" onclick="goPage('shop')">Ver Catálogo</button>
+      <button class="btn-hero" onclick="goPage('payment')">Cómo Pagar</button>
+    </div>
+  </div>
+  <div class="features-bar">
+    <div class="features-grid">
+      <div class="feature"><div class="feature-icon">🚚</div><div class="feature-text"><h4>Envío Rápido</h4><p>24–48h a toda España</p></div></div>
+      <div class="feature"><div class="feature-icon">📱</div><div class="feature-text"><h4>Pago por Bizum</h4><p>Rápido y sin comisiones</p></div></div>
+      <div class="feature"><div class="feature-icon">🏦</div><div class="feature-text"><h4>Transferencia Bancaria</h4><p>Pago seguro por banco</p></div></div>
+      <div class="feature"><div class="feature-icon">💬</div><div class="feature-text"><h4>Asesoramiento</h4><p>Expertos desde 1991</p></div></div>
+    </div>
+  </div>
   <section class="section">
     <div class="section-header">
-      <div class="section-eyebrow">Catálogo completo</div>
-      <h2 class="section-title" id="shopTitle">Todos los Productos</h2>
+      <div class="section-eyebrow">Explora</div>
+      <h2 class="section-title">Nuestras Categorías</h2>
       <div class="section-line"></div>
     </div>
-    <div class="filter-tabs" id="shopFilters"></div>
+    <div class="categories-grid">
+      <div class="cat-card" onclick="goShop('perfumes-mujer')"><div class="cat-bg">🌸</div><div class="cat-overlay"></div><div class="cat-label"><h3>Perfumes Mujer</h3><span>Ver →</span></div></div>
+      <div class="cat-card" onclick="goShop('perfumes-hombre')"><div class="cat-bg">🌿</div><div class="cat-overlay"></div><div class="cat-label"><h3>Perfumes Hombre</h3><span>Ver →</span></div></div>
+      <div class="cat-card" onclick="goShop('perfumes-unisex')"><div class="cat-bg">✨</div><div class="cat-overlay"></div><div class="cat-label"><h3>Unisex &amp; Árabes</h3><span>Ver →</span></div></div>
+      <div class="cat-card" onclick="goShop('sets-regalo')"><div class="cat-bg">🎁</div><div class="cat-overlay"></div><div class="cat-label"><h3>Sets de Regalo</h3><span>Ver →</span></div></div>
+      <div class="cat-card" onclick="goShop('cremas')"><div class="cat-bg">🧴</div><div class="cat-overlay"></div><div class="cat-label"><h3>Cremas y Tratamiento</h3><span>Ver →</span></div></div>
+      <div class="cat-card" onclick="goShop('maquillaje')"><div class="cat-bg">💄</div><div class="cat-overlay"></div><div class="cat-label"><h3>Maquillaje</h3><span>Ver →</span></div></div>
+      <div class="cat-card" onclick="goShop('bolsos')"><div class="cat-bg">👜</div><div class="cat-overlay"></div><div class="cat-label"><h3>Bolsos y Accesorios</h3><span>Ver →</span></div></div>
+      <div class="cat-card" onclick="goShop('bisuteria')"><div class="cat-bg">💎</div><div class="cat-overlay"></div><div class="cat-label"><h3>Bisutería Fina</h3><span>Ver →</span></div></div>
+    </div>
+  </section>
+  <div class="banner">
+    <div class="banner-content">
+      <h2>Alta Perfumería <em>Árabe</em></h2>
+      <p>Descubre las fragancias más deseadas y exclusivas del momento, con una fijación extraordinaria y matices únicos.</p>
+      <button class="btn-hero filled" onclick="goShop('perfumes-unisex')">Explorar Colección</button>
+    </div>
+  </div>
+  <section class="section section-alt">
+    <div class="section-header">
+      <div class="section-eyebrow">Selección</div>
+      <h2 class="section-title">Productos Destacados</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="products-grid" id="homeGrid"></div>
+  </section>
+</div>
+
+<div class="page" id="page-shop">
+  <section class="section">
+    <div class="section-header" style="margin-bottom:24px;">
+      <div class="section-eyebrow" id="shopEyebrow">Catálogo Completo</div>
+      <h2 class="section-title" id="shopTitle">Nuestros Productos</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="filter-tabs">
+      <button class="filter-tab active" onclick="filterCat('all', this)">Todo</button>
+      <button class="filter-tab" onclick="filterCat('perfumes-mujer', this)">Perfumes Mujer</button>
+      <button class="filter-tab" onclick="filterCat('perfumes-hombre', this)">Perfumes Hombre</button>
+      <button class="filter-tab" onclick="filterCat('perfumes-unisex', this)">Unisex &amp; Árabes</button>
+      <button class="filter-tab" onclick="filterCat('cremas', this)">Cosmética</button>
+      <button class="filter-tab" onclick="filterCat('bolsos', this)">Bolsos</button>
+      <button class="filter-tab" onclick="filterCat('bisuteria', this)">Bisutería</button>
+    </div>
     <div class="products-grid" id="shopGrid"></div>
   </section>
 </div>
@@ -184,15 +358,16 @@ footer{background:var(--dark);color:rgba(255,255,255,0.7);padding:60px 30px 30px
   <section class="section">
     <div class="section-header">
       <div class="section-eyebrow">Nuestra Historia</div>
-      <h2 class="section-title">Desde 1991 a tu servicio</h2>
+      <h2 class="section-title">Sobre Soraya</h2>
       <div class="section-line"></div>
     </div>
     <div class="about-content">
-      <p>En Soraya Perfumes y Cosméticos llevamos más de tres décadas seleccionando las mejores fragancias, tratamientos de belleza de alta gama y artículos de moda para ofrecerte una experiencia exclusiva y de confianza.</p>
+      <p>Desde 1991, en Soraya Perfumes y Cosméticos nos dedicamos a seleccionar los mejores productos de belleza, cosmética avanzada y complementos de moda para nuestros clientes. Lo que comenzó como un pequeño proyecto familiar se ha convertido en un referente de confianza, distinción y trato excelente.</p>
+      <p>Nuestra filosofía se basa en ofrecer asesoramiento personalizado y honesto, asegurando siempre la máxima calidad en cada perfume, crema o accesorio que entra en nuestro catálogo.</p>
       <div class="about-stats">
         <div class="stat"><div class="stat-num">35+</div><div class="stat-label">Años de experiencia</div></div>
-        <div class="stat"><div class="stat-num">1000+</div><div class="stat-label">Productos Premium</div></div>
         <div class="stat"><div class="stat-num">100%</div><div class="stat-label">Clientes Satisfechos</div></div>
+        <div class="stat"><div class="stat-num">🚚</div><div class="stat-label">Envíos Garantizados</div></div>
       </div>
     </div>
   </section>
@@ -201,12 +376,13 @@ footer{background:var(--dark);color:rgba(255,255,255,0.7);padding:60px 30px 30px
 <div class="page" id="page-contact">
   <section class="section">
     <div class="section-header">
-      <div class="section-eyebrow">Ubicación y Atención</div>
+      <div class="section-eyebrow">Atención al Cliente</div>
       <h2 class="section-title">Contacta con Nosotros</h2>
       <div class="section-line"></div>
     </div>
     <div class="contact-grid">
       <div>
+        <p style="margin-bottom:30px;line-height:1.8;color:#666;">¿Tienes alguna duda sobre un producto, pedido o método de pago? Escríbenos o llámanos directamente. Estaremos encantados de ayudarte sin ningún compromiso.</p>
         <div class="contact-detail">
           <div class="contact-icon">📞</div>
           <div><h4>Teléfono / WhatsApp</h4><p id="cTel">+34 600 000 000</p></div>
@@ -217,15 +393,19 @@ footer{background:var(--dark);color:rgba(255,255,255,0.7);padding:60px 30px 30px
         </div>
         <div class="contact-detail">
           <div class="contact-icon">📍</div>
-          <div><h4>Dirección Principal</h4><p id="cDir">Calle Mayor, Nº 12, Madrid, España</p></div>
+          <div><h4>Ubicación</h4><p id="cDir">España</p></div>
         </div>
         <div class="contact-detail">
-          <div class="contact-icon">⏰</div>
-          <div><h4>Horario comercial</h4><p id="cHorario">Lunes a Viernes: 10:00 - 14:00 y 17:00 - 20:30 | Sábados: 10:00 - 14:00</p></div>
+          <div class="contact-icon">🕒</div>
+          <div><h4>Horario</h4><p id="cHorario">Lunes a Viernes: 9:30 - 14:00 y 17:00 - 20:30</p></div>
         </div>
       </div>
-      <div style="background:#e8ddd5; min-height:250px; display:flex; align-items:center; justify-content:center; color:#888;">
-        📍 [Espacio reservado para mapa de Google Maps]
+      <div style="background:var(--white);padding:40px;border:1px solid var(--border)">
+        <h3 style="font-family:'Cormorant Garamond',serif;font-size:24px;margin-bottom:20px;">Enviar Mensaje Directo</h3>
+        <div class="form-group"><label>Tu Nombre</label><input type="text" placeholder="Ej. María García"></div>
+        <div class="form-group"><label>Teléfono o Email</label><input type="text" placeholder="Para responderte"></div>
+        <div class="form-group"><label>Mensaje</label><textarea placeholder="Escribe tu consulta aquí..."></textarea></div>
+        <button class="btn-save" style="width:100%" onclick="showToast('✉️ Mensaje enviado con éxito. Te responderemos pronto.')">Enviar por WhatsApp / Web</button>
       </div>
     </div>
   </section>
@@ -234,27 +414,30 @@ footer{background:var(--dark);color:rgba(255,255,255,0.7);padding:60px 30px 30px
 <div class="page" id="page-payment">
   <section class="section">
     <div class="section-header">
-      <div class="section-eyebrow">Métodos Seguros</div>
-      <h2 class="section-title">Instrucciones de Pago</h2>
+      <div class="section-eyebrow">Seguro y Sencillo</div>
+      <h2 class="section-title">Formas de Pago</h2>
       <div class="section-line"></div>
     </div>
-    <div style="max-width:800px; margin:0 auto;">
+    <div style="max-width:800px;margin:0 auto">
+      <p style="text-align:center;margin-bottom:40px;color:#666;line-height:1.8;">Para ofrecerte las menores comisiones y la máxima cercanía, gestionamos los pedidos de manera directa mediante métodos de pago tradicionales y digitales seguros.</p>
+      
       <div class="pay-card">
         <div class="pay-card-icon">📱</div>
-        <div>
-          <h3>Pago por Bizum</h3>
-          <p>Realiza tu pago instantáneo de forma cómoda y sin comisiones directamente a nuestro número verificado.</p>
-          <div class="pay-detail"><strong>Número Bizum:</strong> <span id="bizumNum">600000000</span></div>
+        <div style="flex:1">
+          <h3>Pago instantáneo por Bizum</h3>
+          <p>Envía el importe total cómodamente desde la aplicación de tu banco. Procesamiento inmediato de tu pedido.</p>
+          <div class="pay-detail"><strong>Número Bizum:</strong> <span id="bizumNum">+34 600 000 000</span></div>
         </div>
       </div>
+
       <div class="pay-card">
         <div class="pay-card-icon">🏦</div>
-        <div>
-          <h3>Transferencia Bancaria</h3>
-          <p>Puedes pagar mediante transferencia. Una vez hecho el pedido, realiza el ingreso indicando tu nombre.</p>
+        <div style="flex:1">
+          <h3>Transferencia Bancaria Directa</h3>
+          <p>Realiza un ingreso o transferencia desde cualquier entidad bancaria. El pedido se enviará una vez reflejado el pago.</p>
           <div class="pay-detail">
-            <strong>IBAN:</strong> <span id="bankIBAN">ES21 0000 0000 0000 0000 0000</span><br>
-            <strong>Titular:</strong> <span id="bankTitular">Soraya Perfumes S.L.</span>
+            <strong>IBAN Cuenta:</strong> <span id="bankIBAN">ES00 0000 0000 0000 0000 0000</span><br>
+            <strong>Titular:</strong> <span id="bankTitular">Soraya Perfumes y Cosméticos</span>
           </div>
         </div>
       </div>
@@ -262,389 +445,597 @@ footer{background:var(--dark);color:rgba(255,255,255,0.7);padding:60px 30px 30px
   </section>
 </div>
 
-<div class="modal-overlay" id="productModal">
-  <button class="modal-close" onclick="closeProduct()">×</button>
-  <div class="modal" id="modalContent"></div>
+<div class="newsletter">
+  <h2>Únete a nuestro Club de Belleza</h2>
+  <p>Recibe ofertas exclusivas, novedades y guías de belleza directamente en tu correo.</p>
+  <div class="newsletter-form">
+    <input type="email" placeholder="Tu dirección de email">
+    <button onclick="showToast('✨ ¡Gracias por suscribirte al club!')">Suscribirme</button>
+  </div>
 </div>
 
-<div class="edit-overlay" id="editModal">
-  <div class="edit-box" id="editModalContent"></div>
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="logo-main">Soraya</div>
+      <div class="logo-sub">Perfumes &amp; Cosméticos</div>
+      <p>Tu rincón premium de fragancias y estilo desde 1991. Productos seleccionados con mimo para resaltar tu belleza única.</p>
+      <div class="footer-social">
+        <div class="social-btn" onclick="showToast('📷 Síguenos en Instagram @SorayaPerfumes')">IG</div>
+        <div class="social-btn" onclick="showToast('👍 Síguenos en Facebook')">FB</div>
+        <div class="social-btn" onclick="showToast('💬 Escríbenos por WhatsApp')">WA</div>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Categorías</h4>
+      <a onclick="goShop('perfumes-mujer')">Perfumes de Mujer</a>
+      <a onclick="goShop('perfumes-hombre')">Perfumes de Hombre</a>
+      <a onclick="goShop('perfumes-unisex')">Fragancias Árabes</a>
+      <a onclick="goShop('cremas')">Tratamiento Facial</a>
+    </div>
+    <div class="footer-col">
+      <h4>Info Útil</h4>
+      <a onclick="goPage('payment')">💳 Formas de Pago</a>
+      <a onclick="goPage('contact')">🚚 Envíos y Plazos</a>
+      <a onclick="goPage('about')">Quiénes Somos</a>
+      <a onclick="openLogin()">🔒 Panel Admin</a>
+    </div>
+    <div class="footer-col">
+      <h4>Garantía</h4>
+      <p style="font-size:13px;line-height:1.7;color:rgba(255,255,255,0.4)">Todos nuestros productos son 100% originales y provienen directamente de distribuidores oficiales autorizados.</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div>&copy; 1991-2026 Soraya Perfumes y Cosméticos. Todos los derechos reservados.</div>
+    <div style="display:flex;gap:6px;"><span class="pay-icon">BIZUM</span><span class="pay-icon">BANCO</span><span class="pay-icon">🔒 SECURE</span></div>
+  </div>
+</footer>
+
+<div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
+<div class="cart-sidebar" id="cartSidebar">
+  <div class="cart-header"><h3>Tu Carrito</h3><button class="cart-close" onclick="closeCart()">&times;</button></div>
+  <div class="cart-body" id="cartBody"></div>
+  <div class="cart-footer">
+    <div class="cart-total"><span>Total estimado:</span><strong id="cartTotal">0.00€</strong></div>
+    <div class="cart-pay-info">Para finalizar, enviaremos los detalles de los productos elegidos directamente a tu WhatsApp de atención para confirmar el envío.</div>
+    <button class="btn-checkout" onclick="checkoutWhatsApp()">Confirmar pedido por WhatsApp 💬</button>
+  </div>
 </div>
 
-<div class="toast" id="toast"></div>
+<div class="modal-overlay" id="modalOverlay" onclick="closeModal(event)">
+  <button class="modal-close" onclick="document.getElementById('modalOverlay').classList.remove('open')">&times;</button>
+  <div class="modal" onclick="event.stopPropagation()">
+    <div class="modal-img" id="mImgContainer"></div>
+    <div class="modal-info">
+      <div style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#aaa;" id="mCat">Categoría</div>
+      <h2 id="mTitle" style="margin:6px 0 10px 0">Producto</h2>
+      <div class="modal-price" id="mPrice">0.00€</div>
+      <p id="mDesc">Descripción detallada.</p>
+      <div style="margin-bottom:20px;">
+        <div style="font-size:11px;text-transform:uppercase;color:#888;margin-bottom:8px;font-weight:600;">Tamaños/Variantes Disponibles:</div>
+        <div id="mSizes"></div>
+      </div>
+      <button class="btn-modal" id="mActionBtn">Añadir al Carrito de Compra</button>
+      <div class="modal-pay">✓ Disponible para envío rápido de 24/48 horas.<br>✓ Pago 100% seguro por Bizum o Banco.</div>
+    </div>
+  </div>
+</div>
+
+<div class="overlay" id="loginOverlay" onclick="closeLogin()">
+  <div class="login-box" onclick="event.stopPropagation()">
+    <h3>Acceso Gestión Interna</h3>
+    <div class="login-error" id="loginError">Código PIN de acceso incorrecto</div>
+    <div class="form-group" style="text-align:left">
+      <label>Introduce Código PIN</label>
+      <input type="password" id="pinInput" placeholder="••••" style="text-align:center;font-size:20px;letter-spacing:6px;">
+    </div>
+    <button class="btn-save" style="width:100%;padding:14px;" onclick="verifyPin()">Validar Código</button>
+    <button class="btn-outline" style="width:100%;margin-top:10px;border:none;" onclick="closeLogin()">Cancelar</button>
+  </div>
+</div>
+
+<div class="overlay" id="adminOverlay" onclick="closeAdmin()"></div>
+
+<div class="toast" id="toast">✓ Añadido correctamente</div>
 
 <script>
-// BASE DE DATOS LOCAL INICIAL (Mantenida idéntica al original)
-var initialProducts = [
-  {id:1,title:"Shaghaf Oud Azraq",cat:"perfumes-unisex",price:49.90,oldPrice:59.90,img:"https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&w=500&q=80",badge:"Top Ventas",size:"100ml",desc:"Fragancia árabe lujosa con notas de oud noble, miel silvestre y ámbar cálido."},
-  {id:2,title:"Club de Nuit Intense Intense Man",cat:"perfumes-hombre",price:42.50,oldPrice:52.00,img:"https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=500&q=80",badge:"Popular",size:"105ml",desc:"Un clásico de la perfumería masculina moderna con excelente proyección de limón, piña y abedul ahumado."},
-  {id:3,title:"Crema Facial Hydra-Réponse",cat:"cremas",price:28.90,oldPrice:36.00,img:"https://images.unsplash.com/photo-1608248597481-496100c80836?auto=format&fit=crop&w=500&q=80",badge:"Efecto Glow",size:"50ml",desc:"Tratamiento hidratante intensivo con ácido hialurónico puro y extractos botánicos marinos."},
-  {id:4,title:"Bolso Saffiano Gold Edition",cat:"bolsos",price:39.95,oldPrice:49.95,img:"https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=500&q=80",badge:"Nueva Colección",size:"Mediano",desc:"Bolso de mano rígido con acabado Saffiano elegante y detalles metálicos bañados en oro."},
-  {id:5,title:"Asad de Lattafa",cat:"perfumes-unisex",price:35.00,oldPrice:45.00,img:"https://images.unsplash.com/photo-1523293182086-7651a899d37f?auto=format&fit=crop&w=500&q=80",badge:"Árabe Viral",size:"100ml",desc:"Fragancia de alta gama oriental con especias negras, vainilla cremosa y sándalo."},
-  {id:6,title:"Yara Pink de Lattafa",cat:"perfumes-mujer",price:34.90,oldPrice:44.00,img:"https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&w=500&q=80",badge:"Tendencia",size:"100ml",desc:"Fragancia dulce gourmand ultra femenina con notas de helado de fresa, frutas tropicales y almizcle."},
-  {id:7,title:"Sérum Avanzado Retinol 1%",cat:"cremas",price:32.00,oldPrice:42.00,img:"https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=500&q=80",badge:"Alta Cosmética",size:"30ml",desc:"Renovador celular de noche para suavizar líneas de expresión marcadas y manchas de la piel."},
-  {id:8,title:"Pendientes Gota de Oro de 18k",cat:"bisuteria",price:19.90,oldPrice:25.00,img:"https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=500&q=80",badge:"Acero Inox",size:"Única",desc:"Pendientes con forma de lágrima fluida de diseño moderno totalmente antialérgicos."}
+// ── BASE DE DATOS INICIAL (LOCALSTORAGE PERSISTENTE) ─────
+var defaultProducts = [
+  {id:1,title:"Parfum Prestige Femme",cat:"perfumes-mujer",price:69.90,oldPrice:85.00,img:"🌸",sizes:"50ml,100ml",desc:"Una fragancia elegante con notas de salida florales frescas y fondo amaderado aterciopelado. Ideal para ocasiones especiales."},
+  {id:2,title:"Eau de Parfum Blue Marine",cat:"perfumes-hombre",price:54.50,oldPrice:65.00,img:"🌿",sizes:"100ml",desc:"Frescura mediterránea pura con notas marinas, bergamota y un fondo profundo de sándalo y ámbar."},
+  {id:3,title:"Oud Royal Árabe Colección",cat:"perfumes-unisex",price:89.00,oldPrice:110.00,img:"✨",sizes:"100ml",desc:"Exclusivo extracto de perfume oriental. Lujosa combinación de Oud precioso, rosa de Damasco y especias cálidas."},
+  {id:4,title:"Crema Antiedad Oro 24K",cat:"cremas",price:42.00,oldPrice:58.00,img:"🧴",sizes:"50ml",desc:"Tratamiento revitalizante celular intensivo. Aporta luminosidad, firmeza y reduce visiblemente las líneas de expresión."},
+  {id:5,title:"Sérum Ácido Hialurónico Puro",cat:"cremas",price:29.90,oldPrice:39.00,img:"💧",sizes:"30ml",desc:"Hidratación profunda multicapa que rellena la piel desde el interior de forma inmediata."},
+  {id:6,title:"Bolso Saffiano Cadena Oro",cat:"bolsos",price:49.00,oldPrice:75.00,img:"👜",sizes:"Único",desc:"Elegante bolso de mano estructurado con bandolera de eslabones dorados. Un básico atemporal."},
+  {id:7,title:"Conjunto Cristales Luxury",cat:"bisuteria",price:24.90,oldPrice:35.00,img:"💎",sizes:"Ajustable",desc:"Gargantilla y pendientes a juego bañados en oro rosa con cristales facetados de alta calidad."}
 ];
 
-var products = JSON.parse(localStorage.getItem('soraya_prods')) || initialProducts;
-var settings = JSON.parse(localStorage.getItem('soraya_settings')) || {
+var defaultSettings = {
   tel: "+34 600 000 000",
   email: "info@sorayaperfumes.com",
-  dir: "Calle Mayor, Nº 12, Madrid, España",
-  horario: "Lunes a Viernes: 10:00 - 14:00 y 17:00 - 20:30 | Sábados: 10:00 - 14:00",
-  bizum: "600000000",
-  iban: "ES21 0000 0000 0000 0000 0000",
-  titular: "Soraya Perfumes S.L."
+  dir: "Almería, España",
+  horario: "Lunes a Viernes: 9:30 - 14:00 y 17:00 - 20:30",
+  bizum: "+34 600 000 000",
+  iban: "STATUS_OK_NO_DATA",
+  titular: "Soraya S.L."
 };
+
+var products = JSON.parse(localStorage.getItem('soraya_prods')) || defaultProducts;
+var settings = JSON.parse(localStorage.getItem('soraya_settings')) || defaultSettings;
 var cart = [];
+var currentSelectedSize = "";
 
-function saveProds(){ localStorage.setItem('soraya_prods', JSON.stringify(products)); }
-function saveSettings(){ localStorage.setItem('soraya_settings', JSON.stringify(settings)); }
-
-// NAVEGACIÓN
-function goPage(id){
-  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
-  var t = document.getElementById('page-'+id);
-  if(t) t.classList.add('active');
-  window.scrollTo(0,0);
+// ── NAVEGACIÓN ENTRE SECCIONES ──────────────────────────
+function goPage(pId){
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  var target = document.getElementById('page-' + pId);
+  if(target) target.classList.add('active');
+  window.scrollTo({top: 0, behavior: 'smooth'});
 }
 
-function goShop(cat){
+function goShop(category){
   goPage('shop');
-  var fTabs = document.getElementById('shopFilters');
-  fTabs.innerHTML = `
-    <button class="filter-tab ${!cat?'active':''}" onclick="renderShop(null)">Todos</button>
-    <button class="filter-tab ${cat=='perfumes-mujer'?'active':''}" onclick="renderShop('perfumes-mujer')">Perfumes Mujer</button>
-    <button class="filter-tab ${cat=='perfumes-hombre'?'active':''}" onclick="renderShop('perfumes-hombre')">Perfumes Hombre</button>
-    <button class="filter-tab ${cat=='perfumes-unisex'?'active':''}" onclick="renderShop('perfumes-unisex')">Unisex / Árabes</button>
-    <button class="filter-tab ${cat=='cremas'?'active':''}" onclick="renderShop('cremas')">Cremas &amp; Tratamientos</button>
-    <button class="filter-tab ${cat=='bolsos'?'active':''}" onclick="renderShop('bolsos')">Bolsos &amp; Carteras</button>
-    <button class="filter-tab ${cat=='bisuteria'?'active':''}" onclick="renderShop('bisuteria')">Bisutería</button>
-  `;
-  renderShop(cat);
+  document.getElementById('shopTitle').textContent = category.replace('-',' ').toUpperCase();
+  renderGrid('shopGrid', category);
 }
 
-// RENDERIZADO TIENDA E INICIO
-function renderGrid(containerId, catFilter, limit){
-  var c = document.getElementById(containerId);
-  if(!c) return;
-  c.innerHTML = "";
-  var f = catFilter ? products.filter(p=>p.cat===catFilter) : products;
-  if(limit) f = f.slice(0,limit);
-  f.forEach(p=>{
-    var d = document.createElement('div');
-    d.className = 'product-card';
-    d.innerHTML = `
-      <div class="product-img" onclick="openProduct(${p.id})">
-        ${p.badge?`<span class="product-badge">${p.badge}</span>`:''}
-        <img src="${p.img}" alt="${p.title}">
-        <div class="product-actions">
-          <button class="btn-add-cart" onclick="event.stopPropagation();addToCart(${p.id})">Añadir al Carro</button>
+// ── RENDERIZADO DE CATÁLOGOS (MOSAICO) ─────────────────
+function renderGrid(containerId, catFilter = null, limit = null){
+  var grid = document.getElementById(containerId);
+  if(!grid) return;
+  grid.innerHTML = "";
+  
+  var list = catFilter && catFilter !== 'all' ? products.filter(p => p.cat === catFilter) : products;
+  if(limit) list = list.slice(0, limit);
+  
+  if(list.length === 0){
+    grid.innerHTML = "<p style='grid-column:1/-1;text-align:center;padding:40px;color:#999;'>No hay productos disponibles en esta categoría.</p>";
+    return;
+  }
+  
+  list.forEach(p => {
+    var card = document.createElement('div');
+    card.className = "product-card";
+    card.onclick = () => openModal(p);
+    
+    var imgHtml = p.img.startsWith('data:') || p.img.startsWith('http') 
+      ? `<img src="${p.img}" alt="${p.title}">`
+      : `<div style="font-size:72px;">${p.img}</div>`;
+      
+    var disc = p.oldPrice ? `<div class="product-badge">Oferta</div>` : "";
+    var oldP = p.oldPrice ? `<span class="price-old">${parseFloat(p.oldPrice).toFixed(2)}€</span>` : "";
+    
+    card.innerHTML = `
+      <div class="product-img">
+        ${disc}
+        ${imgHtml}
+        <div class="product-actions" onclick="event.stopPropagation()">
+          <button class="btn-add-cart" onclick="quickAdd(${p.id})">Añadir al Carro</button>
         </div>
       </div>
-      <div class="product-info" onclick="openProduct(${p.id})">
+      <div class="product-info">
         <div class="cat-tag">${p.cat.replace('-',' ')}</div>
         <h3>${p.title}</h3>
-        <div class="price">${p.price.toFixed(2)}€ ${p.oldPrice?`<span class="price-old">${p.oldPrice.toFixed(2)}€</span>`:''}</div>
-        <div class="stars">★★★★★</div>
+        <div><span class="price">${parseFloat(p.price).toFixed(2)}€</span>${oldP}</div>
+        <div class="stars">★★★★★ <span style="color:#aaa;font-size:12px">(5.0)</span></div>
       </div>
     `;
-    c.appendChild(d);
+    grid.appendChild(card);
   });
 }
-function renderShop(cat){
-  var title = "Todos los Productos";
-  if(cat) title = cat.replace('-',' ').toUpperCase();
-  document.getElementById('shopTitle').textContent = title;
-  renderGrid('shopGrid',cat,null);
+
+function filterCat(cat, btn){
+  document.querySelectorAll('.filter-tab').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  renderGrid('shopGrid', cat);
 }
 
-// LOGIN Y ACCESO AL PANEL DE ADMINISTRACIÓN
-function openLogin(){ document.getElementById('loginOverlay').classList.add('open'); }
-function closeLogin(){ document.getElementById('loginOverlay').classList.remove('open'); }
-
-function checkPin(){
-  var pin = document.getElementById('pinInput').value;
-  if(pin === '1991') {
-    document.getElementById('loginError').style.display = 'none';
-    closeLogin();
-    document.getElementById('pinInput').value = "";
-    injectAndOpenAdminPanel(); // Inyecta dinámicamente el panel de administración
+// ── MODAL DE DETALLE / SELECCIÓN ───────────────────────
+function openModal(p){
+  currentSelectedSize = "";
+  document.getElementById('mCat').textContent = p.cat.replace('-',' ');
+  document.getElementById('mTitle').textContent = p.title;
+  document.getElementById('mPrice').textContent = parseFloat(p.price).toFixed(2) + "€";
+  document.getElementById('mDesc').textContent = p.desc || "Sin descripción detallada.";
+  
+  var imgCont = document.getElementById('mImgContainer');
+  if(p.img.startsWith('data:') || p.img.startsWith('http')){
+    imgCont.innerHTML = `<img src="${p.img}" style="max-width:100%;max-height:100%;object-fit:contain;">`;
   } else {
-    document.getElementById('loginError').style.display = 'block';
+    imgCont.innerHTML = `<div style="font-size:120px;">${p.img}</div>`;
+  }
+  
+  var szDiv = document.getElementById('mSizes');
+  szDiv.innerHTML = "";
+  if(p.sizes){
+    var arr = p.sizes.split(',');
+    arr.forEach((s, idx) => {
+      var b = document.createElement('button');
+      b.className = "size-btn" + (idx === 0 ? " active" : "");
+      if(idx === 0) currentSelectedSize = s.trim();
+      b.textContent = s.trim();
+      b.onclick = function(){
+        document.querySelectorAll('.size-btn').forEach(x=>x.classList.remove('active'));
+        b.classList.add('active');
+        currentSelectedSize = s.trim();
+      };
+      szDiv.appendChild(b);
+    });
+  } else {
+    szDiv.innerHTML = "<span style='font-size:13px;color:#666'>Tamaño estándar único</span>";
+    currentSelectedSize = "Estándar";
+  }
+  
+  document.getElementById('mActionBtn').onclick = function(){
+    addToCart(p.id, currentSelectedSize);
+    document.getElementById('modalOverlay').classList.remove('open');
+  };
+  
+  document.getElementById('modalOverlay').classList.add('open');
+}
+
+function closeModal(e){
+  if(e.target === document.getElementById('modalOverlay')) {
+    document.getElementById('modalOverlay').classList.remove('open');
   }
 }
 
-// INYECCIÓN DINÁMICA SEGURA DEL PANEL DE ADMINISTRACIÓN
-function injectAndOpenAdminPanel(){
-  var secureZone = document.getElementById('secureAdminInjection');
+// ── GESTIÓN DEL CARRITO DE COMPRAS ─────────────────────
+function openCart(){ document.getElementById('cartSidebar').classList.add('open'); document.getElementById('cartOverlay').classList.add('open'); renderCart(); }
+function closeCart(){ document.getElementById('cartSidebar').classList.remove('open'); document.getElementById('cartOverlay').classList.remove('open'); }
+
+function addToCart(pId, size){
+  var prod = products.find(p => p.id === pId);
+  if(!prod) return;
+  var item = cart.find(c => c.id === pId && c.size === size);
+  if(item) { item.qty++; } else { cart.push({id:prod.id, title:prod.title, price:prod.price, img:prod.img, size:size, qty:1}); }
+  updateBadge();
+  showToast("✓ Añadido: " + prod.title);
+}
+
+function quickAdd(pId){
+  var prod = products.find(p => p.id === pId);
+  var size = prod && prod.sizes ? prod.sizes.split(',')[0].trim() : "Estándar";
+  addToCart(pId, size);
+}
+
+function updateBadge(){
+  var total = cart.reduce((acc,cur)=>acc+cur.qty, 0);
+  document.getElementById('cartBadge').textContent = total;
+}
+
+function changeQty(idx, amt){
+  cart[idx].qty += amt;
+  if(cart[idx].qty <= 0) { cart.splice(idx, 1); }
+  updateBadge();
+  renderCart();
+}
+
+function renderCart(){
+  var body = document.getElementById('cartBody');
+  body.innerHTML = "";
+  if(cart.length === 0){
+    body.innerHTML = "<div class='cart-empty'>Tu carrito está vacío.<br><span style='font-size:12px;color:#ccc;'>Explora la tienda y añade artículos.</span></div>";
+    document.getElementById('cartTotal').textContent = "0.00€";
+    return;
+  }
+  var total = 0;
+  cart.forEach((c, idx) => {
+    total += c.price * c.qty;
+    var row = document.createElement('div');
+    row.className = "cart-item";
+    var imgHtml = c.img.startsWith('data:') || c.img.startsWith('http') ? `<img src="${c.img}">` : `<div style="font-size:32px">${c.img}</div>`;
+    row.innerHTML = `
+      <div class="cart-item-img">${imgHtml}</div>
+      <div class="cart-item-details">
+        <h4>${c.title}</h4>
+        <div style="font-size:11px;color:#888;margin-top:-4px;margin-bottom:4px;">Var: ${c.size}</div>
+        <div class="price">${parseFloat(c.price).toFixed(2)}€</div>
+        <div class="cart-qty">
+          <button class="qty-btn" onclick="changeQty(${idx},-1)">-</button>
+          <span class="qty-num">${c.qty}</span>
+          <button class="qty-btn" onclick="changeQty(${idx},1)">+</button>
+        </div>
+      </div>
+      <button class="cart-item-remove" onclick="cart.splice(${idx},1);updateBadge();renderCart();">&times;</button>
+    `;
+    body.appendChild(row);
+  });
+  document.getElementById('cartTotal').textContent = total.toFixed(2) + "€";
+}
+
+function checkoutWhatsApp(){
+  if(cart.length===0) return;
+  var text = "¡Hola! Me gustaría realizar un pedido en Soraya Perfumes y Cosméticos:\n\n";
+  var total = 0;
+  cart.forEach(c => {
+    text += `• ${c.qty}x ${c.title} (${c.size}) - ${(c.price*c.qty).toFixed(2)}€\n`;
+    total += c.price * c.qty;
+  });
+  text += `\n💰 *Total Estimado: ${total.toFixed(2)}€*\n\nPor favor, confirmadme disponibilidad y el método para realizar el ingreso. ¡Gracias!`;
+  var url = "https://api.whatsapp.com/send?phone=" + settings.tel.replace(/[^0-9]/g, "") + "&text=" + encodeURIComponent(text);
+  window.open(url, '_blank');
+}
+
+// ── SISTEMA DE LOGIN Y CONTROL DE ACCESO ────────────────
+function openLogin(){ document.getElementById('loginOverlay').classList.add('open'); document.getElementById('pinInput').value=""; }
+function closeLogin(){ document.getElementById('loginOverlay').classList.remove('open'); }
+
+function verifyPin(){
+  var pin = document.getElementById('pinInput').value;
+  if(pin === "1991"){
+    document.getElementById('loginError').style.display = "none";
+    closeLogin();
+    injectAndOpenAdminPanel();
+  } else {
+    var err = document.getElementById('loginError');
+    err.style.display = "block";
+    err.textContent = "Código PIN de seguridad incorrecto.";
+  }
+}
+
+// ── INYECCIÓN DINÁMICA DEL PANEL DE ADMINISTRACIÓN ──────
+function injectAndOpenAdminPanel() {
+  var panel = document.getElementById('adminPanelContainer');
+  if(!panel) {
+    panel = document.createElement('div');
+    panel.id = 'adminPanelContainer';
+    panel.className = 'overlay';
+    document.body.appendChild(panel);
+  }
   
-  // Generamos toda la estructura HTML de la administración bajo demanda
-  secureZone.innerHTML = `
-    <div class="admin-panel">
+  panel.innerHTML = `
+    <div class="admin-panel" onclick="event.stopPropagation()">
       <div class="admin-header">
-        <h2>Panel de Gestión Profesional</h2>
-        <button class="btn-del" onclick="closeAdminPanel()" style="background:transparent; border-color:var(--gold-light); color:var(--gold-light);">Cerrar Panel</button>
+        <h2>Panel de Gestión Interna</h2>
+        <button class="cart-close" style="color:white" onclick="closeAdmin()">&times;</button>
       </div>
       <div class="admin-body">
         <div class="admin-tabs">
-          <div class="admin-tab active" id="t1" onclick="switchAdminTab('prods')">Productos</div>
-          <div class="admin-tab" id="t2" onclick="switchAdminTab('new')">Nuevo Producto</div>
-          <div class="admin-tab" id="t3" onclick="switchAdminTab('sets')">Ajustes Tienda</div>
+          <div class="admin-tab active" id="tabBtn-list" onclick="switchAdminTab('list')">Artículos en Venta</div>
+          <div class="admin-tab" id="tabBtn-add" onclick="switchAdminTab('add')">Dar de Alta Nuevo</div>
+          <div class="admin-tab" id="tabBtn-config" onclick="switchAdminTab('config')">Ajustes Globales</div>
         </div>
         
-        <div class="tab-content active" id="ad-prods">
-          <div style="display:flex; justify-content:space-between; margin-bottom:16px;">
-             <p style="font-size:14px; color:#666;">Gestiona tu catálogo de artículos en tiempo real.</p>
-             <button class="btn-edit" onclick="downloadBackupHTML()">💾 Guardar Todo de Forma Permanente</button>
+        <div class="tab-content active" id="adminTab-list">
+          <div style="margin-bottom:14px;display:flex;justify-content:between;align-items:center;">
+            <p style="font-size:13px;color:#666;">Catálogo en vivo en LocalStorage.</p>
+            <button class="btn-outline" onclick="downloadBackup()">📥 Descargar HTML Copia Seguridad</button>
           </div>
-          <div id="adminProdsList"></div>
+          <div id="adminProdsList" style="max-height:450px;overflow-y:auto;padding-right:6px;"></div>
         </div>
         
-        <div class="tab-content" id="ad-new">
+        <div class="tab-content" id="adminTab-add">
           <div class="form-row">
-            <div class="form-group"><label>Título del Producto</label><input type="text" id="npTitle"></div>
+            <div class="form-group"><label>Título del Producto</label><input type="text" id="addTitle" placeholder="Ej. Chanel Nº5 Premium"></div>
             <div class="form-group">
               <label>Categoría</label>
-              <select id="npCat">
+              <select id="addCat">
                 <option value="perfumes-mujer">Perfumes Mujer</option>
                 <option value="perfumes-hombre">Perfumes Hombre</option>
-                <option value="perfumes-unisex">Unisex &amp; Árabes</option>
-                <option value="cremas">Cremas &amp; Tratamientos</option>
-                <option value="bolsos">Bolsos &amp; Carteras</option>
+                <option value="perfumes-unisex">Unisex & Árabes</option>
+                <option value="agua-colonia">Agua de Colonia</option>
+                <option value="cremas">Cremas & Tratamientos</option>
+                <option value="maquillaje">Maquillaje</option>
+                <option value="cuidado-corporal">Cuidado Corporal</option>
+                <option value="bolsos">Bolsos & Carteras</option>
                 <option value="bisuteria">Bisutería</option>
+                <option value="moda-mujer">Moda Mujer</option>
+                <option value="sets-regalo">Sets Regalo</option>
               </select>
             </div>
           </div>
           <div class="form-row">
-            <div class="form-group"><label>Precio de Venta (€)</label><input type="number" step="0.01" id="npPrice"></div>
-            <div class="form-group"><label>Precio Antiguo (€ - Opcional)</label><input type="number" step="0.01" id="npOld"></div>
+            <div class="form-group"><label>Precio de Venta (€)</label><input type="number" step="0.01" id="addPrice" placeholder="59.90"></div>
+            <div class="form-group"><label>Precio Anterior / Tachado (€)</label><input type="number" step="0.01" id="addOldPrice" placeholder="Opcional"></div>
           </div>
           <div class="form-row">
-            <div class="form-group"><label>URL Imagen (o Enlace Base64)</label><input type="text" id="npImg" placeholder="https://..."></div>
-            <div class="form-group"><label>Etiqueta / Badge (Opcional)</label><input type="text" id="npBadge" placeholder="Top Ventas, Oferta..."></div>
+            <div class="form-group"><label>Variantes / Tamaños (Separados por comas)</label><input type="text" id="addSizes" placeholder="Ej. 50ml, 100ml, 150ml"></div>
+            <div class="form-group"><label>Foto (Emoji o URL Base64 de Imagen)</label><input type="text" id="addImg" placeholder="Ej. 🌸 o enlace url/data:image"></div>
           </div>
-          <div class="form-group"><label>Tamaño / Formato</label><input type="text" id="npSize" placeholder="100ml, Única, 50ml..."></div>
-          <div class="form-group"><label>Descripción del Producto</label><textarea id="npDesc"></textarea></div>
-          <button class="btn-save" onclick="createNewProduct()">Añadir al catálogo</button>
+          <div class="form-group"><label>Descripción del Producto</label><textarea id="addDesc" placeholder="Detalles, notas olfativas, etc."></textarea></div>
+          <button class="btn-save" onclick="saveNewProduct()">Añadir Producto al Sistema</button>
         </div>
         
-        <div class="tab-content" id="ad-sets">
-          <h3 style="font-family:'Cormorant Garamond',serif; font-size:20px; margin-bottom:14px;">Datos de Contacto</h3>
+        <div class="tab-content" id="adminTab-config">
           <div class="form-row">
-            <div class="form-group"><label>Teléfono / WhatsApp</label><input type="text" id="stTel"></div>
-            <div class="form-group"><label>Email Corporativo</label><input type="text" id="stEmail"></div>
+            <div class="form-group"><label>Teléfono Destinatario WhatsApp</label><input type="text" id="cfgTel"></div>
+            <div class="form-group"><label>Email de Contacto</label><input type="email" id="cfgEmail"></div>
           </div>
-          <div class="form-group"><label>Dirección Física</label><input type="text" id="stDir"></div>
-          <div class="form-group"><label>Horario</label><input type="text" id="stHorario"></div>
-          
-          <h3 style="font-family:'Cormorant Garamond',serif; font-size:20px; margin-top:24px; margin-bottom:14px;">Datos de Cobro</h3>
           <div class="form-row">
-            <div class="form-group"><label>Número de Bizum</label><input type="text" id="stBizum"></div>
-            <div class="form-group"><label>Titular de la Cuenta</label><input type="text" id="stTitular"></div>
+            <div class="form-group"><label>Dirección / Ubicación</label><input type="text" id="cfgDir"></div>
+            <div class="form-group"><label>Horario Comercial</label><input type="text" id="cfgHorario"></div>
           </div>
-          <div class="form-group"><label>Código IBAN Bancario</label><input type="text" id="stIban"></div>
-          <button class="btn-save" onclick="saveStoreSettings()">Actualizar Configuración</button>
+          <div class="form-row">
+            <div class="form-group"><label>Número para pagos Bizum</label><input type="text" id="cfgBizum"></div>
+            <div class="form-group"><label>Titular de Cuenta Bancaria</label><input type="text" id="cfgTitular"></div>
+          </div>
+          <div class="form-group"><label>Código IBAN de la Cuenta</label><input type="text" id="cfgIban"></div>
+          <button class="btn-save" onclick="saveGlobalSettings()">Guardar Configuración Global</button>
+        </div>
+      </div>
+    </div>
+    
+    <div class="edit-overlay" id="editOverlay" onclick="closeEditModal(event)">
+      <div class="edit-box" onclick="event.stopPropagation()">
+        <div class="edit-head"><h3>Modificar Artículo</h3><button class="cart-close" style="color:white" onclick="document.getElementById('editOverlay').classList.remove('open')">&times;</button></div>
+        <div class="edit-body">
+          <input type="hidden" id="editId">
+          <div class="form-group"><label>Título</label><input type="text" id="editTitle"></div>
+          <div class="form-row">
+            <div class="form-group"><label>Precio (€)</label><input type="number" step="0.01" id="editPrice"></div>
+            <div class="form-group"><label>Precio Tachado (€)</label><input type="number" step="0.01" id="editOldPrice"></div>
+          </div>
+          <div class="form-group"><label>Tamaños (separados por comas)</label><input type="text" id="editSizes"></div>
+          <div class="form-group"><label>Imagen (Emoji o Imagen URL)</label><input type="text" id="editImg"></div>
+          <div class="form-group"><label>Descripción</label><textarea id="editDesc"></textarea></div>
+          <button class="btn-save" style="width:100%" onclick="saveEditedProduct()">Guardar Cambios Efectuados</button>
         </div>
       </div>
     </div>
   `;
-
-  // Abrimos visualmente la interfaz de administración
-  document.getElementById('adminContainerOverlay').style.display = 'flex';
-  renderAdminProducts();
   
-  // Precargar campos de ajustes
-  document.getElementById('stTel').value = settings.tel;
-  document.getElementById('stEmail').value = settings.email;
-  document.getElementById('stDir').value = settings.dir;
-  document.getElementById('stHorario').value = settings.horario;
-  document.getElementById('stBizum').value = settings.bizum;
-  document.getElementById('stIban').value = settings.iban;
-  document.getElementById('stTitular').value = settings.titular;
-}
-
-function closeAdminPanel(){
-  document.getElementById('adminContainerOverlay').style.display = 'none';
-  document.getElementById('secureAdminInjection').innerHTML = ""; // Limpieza por seguridad
-}
-
-function switchAdminTab(target){
-  document.getElementById('ad-prods').classList.remove('active');
-  document.getElementById('ad-new').classList.remove('active');
-  document.getElementById('ad-sets').classList.remove('active');
-  document.getElementById('t1').classList.remove('active');
-  document.getElementById('t2').classList.remove('active');
-  document.getElementById('t3').classList.remove('active');
+  panel.classList.add('open');
+  refreshAdminProdsList();
   
-  if(target === 'prods'){
-    document.getElementById('ad-prods').classList.add('active');
-    document.getElementById('t1').classList.add('active');
-    renderAdminProducts();
-  } else if(target === 'new'){
-    document.getElementById('ad-new').classList.add('active');
-    document.getElementById('t2').classList.add('active');
-  } else {
-    document.getElementById('ad-sets').classList.add('active');
-    document.getElementById('t3').classList.add('active');
-  }
+  // Cargar datos actuales en los inputs de configuración
+  document.getElementById('cfgTel').value = settings.tel || "";
+  document.getElementById('cfgEmail').value = settings.email || "";
+  document.getElementById('cfgDir').value = settings.dir || "";
+  document.getElementById('cfgHorario').value = settings.horario || "";
+  document.getElementById('cfgBizum').value = settings.bizum || "";
+  document.getElementById('cfgIban').value = settings.iban || "";
+  document.getElementById('cfgTitular').value = settings.titular || "";
 }
 
-// ADMINISTRACIÓN DE PRODUCTOS (LISTADO)
-function renderAdminProducts(){
-  var box = document.getElementById('adminProdsList');
-  if(!box) return;
-  box.innerHTML = "";
-  products.forEach(p=>{
-    var r = document.createElement('div');
-    r.className = 'admin-prod-row';
-    r.innerHTML = `
-      <div class="admin-prod-img"><img src="${p.img}"></div>
+function closeAdmin(){
+  var panel = document.getElementById('adminPanelContainer');
+  if(panel) panel.classList.remove('open');
+}
+
+function switchAdminTab(tId){
+  document.querySelectorAll('.admin-tab').forEach(t=>t.classList.remove('active'));
+  document.querySelectorAll('.tab-content').forEach(c=>c.classList.remove('active'));
+  document.getElementById('tabBtn-'+tId).classList.add('active');
+  document.getElementById('adminTab-'+tId).classList.add('active');
+}
+
+// ── LÓGICA DE CRUD Y MUTACIONES DEL PANEL ─────────────────
+function refreshAdminProdsList(){
+  var container = document.getElementById('adminProdsList');
+  if(!container) return;
+  container.innerHTML = "";
+  
+  products.forEach(p => {
+    var row = document.createElement('div');
+    row.className = "admin-prod-row";
+    var imgHtml = p.img.startsWith('data:') || p.img.startsWith('http') ? `<img src="${p.img}">` : p.img;
+    row.innerHTML = `
+      <div class="admin-prod-img">${imgHtml}</div>
       <div class="admin-prod-info">
         <strong>${p.title}</strong>
-        <span class="sub">${p.cat.replace('-',' ')} | ${p.size}</span><br>
-        <span class="prc">${p.price.toFixed(2)}€</span>
+        <span class="sub">${p.cat.replace('-',' ')} | Variantes: ${p.sizes||'Única'}</span><br>
+        <span class="prc">${parseFloat(p.price).toFixed(2)}€</span>
       </div>
-      <button class="btn-edit" onclick="openEditModal(${p.id})">Editar</button>
-      <button class="btn-del" onclick="deleteProduct(${p.id})">Eliminar</button>
+      <button class="btn-edit" onclick="openEditModalDirect(${p.id})">Editar</button>
+      <button class="btn-del" onclick="deleteProductDirect(${p.id})">Eliminar</button>
     `;
-    box.appendChild(r);
+    container.appendChild(row);
   });
 }
 
-function createNewProduct(){
-  var title = document.getElementById('npTitle').value;
-  var cat = document.getElementById('npCat').value;
-  var price = parseFloat(document.getElementById('npPrice').value);
-  var oldPrice = parseFloat(document.getElementById('npOld').value) || null;
-  var img = document.getElementById('npImg').value || "https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&w=500&q=80";
-  var badge = document.getElementById('npBadge').value || null;
-  var size = document.getElementById('npSize').value || "100ml";
-  var desc = document.getElementById('npDesc').value || "";
-
-  if(!title || isNaN(price)){ alert("Introduce título y precio correctos"); return; }
+function saveNewProduct(){
+  var title = document.getElementById('addTitle').value.trim();
+  var cat = document.getElementById('addCat').value;
+  var price = parseFloat(document.getElementById('addPrice').value);
+  var oldPrice = parseFloat(document.getElementById('addOldPrice').value) || null;
+  var sizes = document.getElementById('addSizes').value.trim();
+  var img = document.getElementById('addImg').value.trim() || "📦";
+  var desc = document.getElementById('addDesc').value.trim();
+  
+  if(!title || isNaN(price)){ alert("Por favor complete el nombre y precio del artículo."); return; }
   
   var newId = products.length > 0 ? Math.max(...products.map(p=>p.id)) + 1 : 1;
-  products.push({id:newId, title:title, cat:cat, price:price, oldPrice:oldPrice, img:img, badge:badge, size:size, desc:desc});
+  products.push({id:newId, title:title, cat:cat, price:price, oldPrice:oldPrice, sizes:sizes, img:img, desc:desc});
   
-  saveProds();
-  alert("¡Producto añadido con éxito!");
+  localStorage.setItem('soraya_prods', JSON.stringify(products));
+  showToast("✓ Producto añadido correctamente");
   
-  // Limpieza
-  document.getElementById('npTitle').value="";
-  document.getElementById('npPrice').value="";
-  document.getElementById('npOld').value="";
-  document.getElementById('npImg').value="";
-  document.getElementById('npBadge').value="";
-  document.getElementById('npSize').value="";
-  document.getElementById('npDesc').value="";
+  // Limpiar inputs
+  document.getElementById('addTitle').value = "";
+  document.getElementById('addPrice').value = "";
+  document.getElementById('addOldPrice').value = "";
+  document.getElementById('addSizes').value = "";
+  document.getElementById('addImg').value = "";
+  document.getElementById('addDesc').value = "";
   
-  switchAdminTab('prods');
-  renderGrid('homeGrid',null,8);
+  refreshAdminProdsList();
+  renderGrid('homeGrid', null, 8);
 }
 
-function deleteProduct(id){
-  if(confirm("¿Seguro que deseas eliminar este producto?")){
-    products = products.filter(p=>p.id !== id);
-    saveProds();
-    renderAdminProducts();
-    renderGrid('homeGrid',null,8);
+function openEditModalDirect(id){
+  var p = products.find(x => x.id === id);
+  if(!p) return;
+  document.getElementById('editId').value = p.id;
+  document.getElementById('editTitle').value = p.title;
+  document.getElementById('editPrice').value = p.price;
+  document.getElementById('editOldPrice').value = p.oldPrice || "";
+  document.getElementById('editSizes').value = p.sizes || "";
+  document.getElementById('editImg').value = p.img;
+  document.getElementById('editDesc').value = p.desc || "";
+  document.getElementById('editOverlay').classList.add('open');
+}
+
+function closeEditModal(e){
+  if(e.target === document.getElementById('editOverlay')) {
+    document.getElementById('editOverlay').classList.remove('open');
   }
 }
 
-// FORMULARIO MODAL DE EDICIÓN
-function openEditModal(id){
-  var p = products.find(prod=>prod.id === id);
-  if(!p) return;
-  var m = document.getElementById('editModal');
-  var c = document.getElementById('editModalContent');
+function saveEditedProduct(){
+  var id = parseInt(document.getElementById('editId').value);
+  var idx = products.findIndex(p => p.id === id);
+  if(idx === -1) return;
   
-  c.innerHTML = `
-    <div class="edit-head">
-      <h3>Modificar Artículo</h3>
-      <button class="modal-close" onclick="closeEditModal()" style="background:transparent; border:none; color:white; font-size:24px;">×</button>
-    </div>
-    <div class="edit-body">
-      <div class="form-row">
-        <div class="form-group"><label>Título</label><input type="text" id="edTitle" value="${p.title}"></div>
-        <div class="form-group">
-          <label>Categoría</label>
-          <select id="edCat">
-            <option value="perfumes-mujer" ${p.cat=='perfumes-mujer'?'selected':''}>Perfumes Mujer</option>
-            <option value="perfumes-hombre" ${p.cat=='perfumes-hombre'?'selected':''}>Perfumes Hombre</option>
-            <option value="perfumes-unisex" ${p.cat=='perfumes-unisex'?'selected':''}>Unisex &amp; Árabes</option>
-            <option value="cremas" ${p.cat=='cremas'?'selected':''}>Cremas &amp; Tratamientos</option>
-            <option value="bolsos" ${p.cat=='bolsos'?'selected':''}>Bolsos &amp; Carteras</option>
-            <option value="bisuteria" ${p.cat=='bisuteria'?'selected':''}>Bisutería</option>
-          </select>
-        </div>
-      </div>
-      <div class="form-row">
-        <div class="form-group"><label>Precio (€)</label><input type="number" step="0.01" id="edPrice" value="${p.price}"></div>
-        <div class="form-group"><label>Precio Antiguo (€)</label><input type="number" step="0.01" id="edOld" value="${p.oldPrice||''}"></div>
-      </div>
-      <div class="form-row">
-        <div class="form-group"><label>URL Imagen</label><input type="text" id="edImg" value="${p.img}"></div>
-        <div class="form-group"><label>Etiqueta / Badge</label><input type="text" id="edBadge" value="${p.badge||''}"></div>
-      </div>
-      <div class="form-group"><label>Tamaño / Formato</label><input type="text" id="edSize" value="${p.size}"></div>
-      <div class="form-group"><label>Descripción</label><textarea id="edDesc">${p.desc||''}</textarea></div>
-      <button class="btn-save" onclick="saveProductEdition(${p.id})">Guardar Cambios</button>
-    </div>
-  `;
-  m.classList.add('open');
-}
-function closeEditModal(){ document.getElementById('editModal').classList.remove('open'); }
-
-function saveProductEdition(id){
-  var p = products.find(prod=>prod.id === id);
-  if(!p) return;
+  products[idx].title = document.getElementById('editTitle').value.trim();
+  products[idx].price = parseFloat(document.getElementById('editPrice').value);
+  products[idx].oldPrice = parseFloat(document.getElementById('editOldPrice').value) || null;
+  products[idx].sizes = document.getElementById('editSizes').value.trim();
+  products[idx].img = document.getElementById('editImg').value.trim();
+  products[idx].desc = document.getElementById('editDesc').value.trim();
   
-  p.title = document.getElementById('edTitle').value;
-  p.cat = document.getElementById('edCat').value;
-  p.price = parseFloat(document.getElementById('edPrice').value);
-  p.oldPrice = parseFloat(document.getElementById('edOld').value) || null;
-  p.img = document.getElementById('edImg').value;
-  p.badge = document.getElementById('edBadge').value || null;
-  p.size = document.getElementById('edSize').value;
-  p.desc = document.getElementById('edDesc').value;
+  localStorage.setItem('soraya_prods', JSON.stringify(products));
+  document.getElementById('editOverlay').classList.remove('open');
+  showToast("✓ Cambios guardados");
   
-  saveProds();
-  closeEditModal();
-  renderAdminProducts();
-  renderGrid('homeGrid',null,8);
-  showToast("✓ Cambios guardados en el producto");
+  refreshAdminProdsList();
+  renderGrid('homeGrid', null, 8);
 }
 
-// CONFIGURACIÓN DE CONTACTO / PAGOS
-function saveStoreSettings(){
-  settings.tel = document.getElementById('stTel').value;
-  settings.email = document.getElementById('stEmail').value;
-  settings.dir = document.getElementById('stDir').value;
-  settings.horario = document.getElementById('stHorario').value;
-  settings.bizum = document.getElementById('stBizum').value;
-  settings.iban = document.getElementById('stIban').value;
-  settings.titular = document.getElementById('stTitular').value;
-  
-  saveSettings();
-  
-  // Actualización visual en vivo en la web
-  if(settings.tel) document.getElementById('cTel').textContent=settings.tel;
-  if(settings.email) document.getElementById('cEmail').textContent=settings.email;
-  if(settings.dir) document.getElementById('cDir').textContent=settings.dir;
-  if(settings.horario) document.getElementById('cHorario').textContent=settings.horario;
-  if(settings.bizum) document.getElementById('bizumNum').textContent=settings.bizum;
-  if(settings.iban) document.getElementById('bankIBAN').textContent=settings.iban;
-  if(settings.titular) document.getElementById('bankTitular').textContent=settings.titular;
-  
-  alert("¡Ajustes globales de la tienda guardados!");
+function deleteProductDirect(id){
+  if(!confirm("¿Está completamente seguro de eliminar este artículo?")) return;
+  products = products.filter(p => p.id !== id);
+  localStorage.setItem('soraya_prods', JSON.stringify(products));
+  showToast("✓ Artículo eliminado");
+  refreshAdminProdsList();
+  renderGrid('homeGrid', null, 8);
 }
 
-// COPIA DE SEGURIDAD PERMANENTE EN HTML
-function downloadBackupHTML(){
+function saveGlobalSettings(){
+  settings.tel = document.getElementById('cfgTel').value.trim();
+  settings.email = document.getElementById('cfgEmail').value.trim();
+  settings.dir = document.getElementById('cfgDir').value.trim();
+  settings.horario = document.getElementById('cfgHorario').value.trim();
+  settings.bizum = document.getElementById('cfgBizum').value.trim();
+  settings.iban = document.getElementById('cfgIban').value.trim();
+  settings.titular = document.getElementById('cfgTitular').value.trim();
+  
+  localStorage.setItem('soraya_settings', JSON.stringify(settings));
+  showToast("✓ Configuración de la tienda guardada");
+  
+  // Actualizar textos estáticos en vivo
+  if(settings.tel) document.getElementById('cTel').textContent = settings.tel;
+  if(settings.email) document.getElementById('cEmail').textContent = settings.email;
+  if(settings.dir) document.getElementById('cDir').textContent = settings.dir;
+  if(settings.horario) document.getElementById('cHorario').textContent = settings.horario;
+  if(settings.bizum) document.getElementById('bizumNum').textContent = settings.bizum;
+  if(settings.iban) document.getElementById('bankIBAN').textContent = settings.iban;
+  if(settings.titular) document.getElementById('bankTitular').textContent = settings.titular;
+}
+
+// ── COPIA DE SEGURIDAD ESTÁTICA EXPORTABLE ─────────────
+function downloadBackup(){
+  showToast('💾 Generando archivo autocontenido...');
   setTimeout(function(){
     try {
-      var currentHTML = "<!DOCTYPE html>\n" + document.documentElement.outerHTML;
+      var currentHTML = document.documentElement.outerHTML;
+      // Reemplazar la base de datos hardcodeada por el estado de mutación actual
+      var regexProds = /var products = JSON\.parse\(localStorage\.getItem\('soraya_prods'\)\) \|\| defaultProducts;/;
+      var regexSettings = /var settings = JSON\.parse\(localStorage\.getItem\('soraya_settings'\)\) \|\| defaultSettings;/;
+      
+      var injectData = `var products = ${JSON.stringify(products)};\nvar settings = ${JSON.stringify(settings)};\n//`;
+      currentHTML = currentHTML.replace("var products = JSON.parse(localStorage.getItem('soraya_prods')) || defaultProducts;", injectData);
+      
       var blob = new Blob([currentHTML], {type: 'text/html;charset=utf-8'});
       var url = URL.createObjectURL(blob);
       var a = document.createElement('a');
@@ -661,130 +1052,23 @@ function downloadBackupHTML(){
   }, 300);
 }
 
-// APARTADO PÚBLICO: CARRO Y DETALLES DE PRODUCTO (Sin cambios)
-function openProduct(id){
-  var p = products.find(prod=>prod.id===id);
-  if(!p) return;
-  var o = document.getElementById('productModal');
-  var c = document.getElementById('modalContent');
-  c.innerHTML = `
-    <div class="modal-img"><img src="${p.img}" alt="${p.title}"></div>
-    <div class="modal-info">
-      <div class="cat-tag">${p.cat.replace('-',' ')} · ${p.size}</div>
-      <h2>${p.title}</h2>
-      <div class="modal-price">${p.price.toFixed(2)}€</div>
-      <p>${p.desc || 'Sin descripción disponible.'}</p>
-      <button class="btn-modal" onclick="addToCart(${p.id});closeProduct();">Añadir al Carro de Compra</button>
-      <div class="modal-pay">✨ Paga de forma 100% segura mediante Bizum o Transferencia Bancaria Directa.</div>
-    </div>
-  `;
-  o.classList.add('open');
-}
-function closeProduct(){ document.getElementById('productModal').classList.remove('open'); }
-
-function openCart(){ document.getElementById('cartOverlay').classList.add('open'); document.getElementById('cartSidebar').classList.add('open'); renderCart(); }
-function closeCart(){ document.getElementById('cartOverlay').classList.remove('open'); document.getElementById('cartSidebar').classList.remove('open'); }
-
-function addToCart(id){
-  var p = products.find(prod=>prod.id===id);
-  if(!p) return;
-  var item = cart.find(c=>c.product.id===id);
-  if(item) { item.qty++; } else { cart.push({product:p, qty:1}); }
-  updateBadge();
-  showToast('✓ Añadido al carro: ' + p.title);
-}
-function updateBadge(){
-  var total = cart.reduce((acc,item)=>acc+item.qty, 0);
-  document.getElementById('cartBadge').textContent = total;
-}
-function updateQty(id, delta){
-  var item = cart.find(c=>c.product.id===id);
-  if(!item) return;
-  item.qty += delta;
-  if(item.qty <= 0) { cart = cart.filter(c=>c.product.id!==id); }
-  updateBadge();
-  renderCart();
-}
-function removeFromCart(id){
-  cart = cart.filter(c=>c.product.id!==id);
-  updateBadge();
-  renderCart();
-}
-function renderCart(){
-  var body = document.getElementById('cartBody');
-  body.innerHTML = "";
-  if(cart.length === 0){
-    body.innerHTML = `<div class="cart-empty">Tu carro está vacío.<br><br><button class="btn-outline" onclick="closeCart()">Volver a la Tienda</button></div>`;
-    document.getElementById('cartTotal').textContent = "0.00€";
-    return;
-  }
-  var total = 0;
-  cart.forEach(item=>{
-    var sub = item.product.price * item.qty;
-    total += sub;
-    var d = document.createElement('div');
-    d.className = "cart-item";
-    d.innerHTML = `
-      <div class="cart-item-img"><img src="${item.product.img}"></div>
-      <div class="cart-item-details">
-        <h4>${item.product.title}</h4>
-        <div class="price">${item.product.price.toFixed(2)}€</div>
-        <div class="cart-qty">
-          <button class="qty-btn" onclick="updateQty(${item.product.id},-1)">-</button>
-          <span class="qty-num">${item.qty}</span>
-          <button class="qty-btn" onclick="updateQty(${item.product.id},1)">+</button>
-        </div>
-      </div>
-      <button class="cart-item-remove" onclick="removeFromCart(${item.product.id})">×</button>
-    `;
-    body.appendChild(d);
-  });
-  document.getElementById('cartTotal').textContent = total.toFixed(2) + "€";
-}
-
-function checkout(){
-  if(cart.length === 0) return;
-  var total = cart.reduce((acc,i)=>acc+(i.product.price*i.qty),0);
-  var text = `🛍️ *Nuevo Pedido - Soraya Perfumes*\n\n`;
-  cart.forEach(i=>{ text += `• ${i.qty}x ${i.product.title} (${i.product.size}) - ${(i.product.price*i.qty).toFixed(2)}€\n`; });
-  text += `\n💰 *Total del Pedido:* ${total.toFixed(2)}€\n`;
-  text += `⚙️ _Por favor, indícame tu dirección de envío para completar el pedido._`;
-  
-  var wUrl = "https://wa.me/" + settings.tel.replace(/[^0-9]/g, "") + "?text=" + encodeURIComponent(text);
-  window.open(wUrl, '_blank');
-}
-
 function showToast(msg){
   var t = document.getElementById('toast');
   t.textContent = msg; t.classList.add('show');
   setTimeout(function(){ t.classList.remove('show'); }, 3000);
 }
 
-// INIT CENTRALIZADO
-renderGrid('homeGrid',null,8);
+// ── DISPARADORES INICIALES (INIT) ────────────────────────
+renderGrid('homeGrid', null, 8);
 updateBadge();
-if(settings.tel) document.getElementById('cTel').textContent=settings.tel;
-if(settings.email) document.getElementById('cEmail').textContent=settings.email;
-if(settings.dir) document.getElementById('cDir').textContent=settings.dir;
-if(settings.horario) document.getElementById('cHorario').textContent=settings.horario;
-if(settings.bizum) document.getElementById('bizumNum').textContent=settings.bizum;
-if(settings.iban) document.getElementById('bankIBAN').textContent=settings.iban;
-if(settings.titular) document.getElementById('bankTitular').textContent=settings.titular;
+
+if(settings.tel) document.getElementById('cTel').textContent = settings.tel;
+if(settings.email) document.getElementById('cEmail').textContent = settings.email;
+if(settings.dir) document.getElementById('cDir').textContent = settings.dir;
+if(settings.horario) document.getElementById('cHorario').textContent = settings.horario;
+if(settings.bizum) document.getElementById('bizumNum').textContent = settings.bizum;
+if(settings.iban) document.getElementById('bankIBAN').textContent = settings.iban;
+if(settings.titular) document.getElementById('bankTitular').textContent = settings.titular;
 </script>
-
-<div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
-<div class="cart-sidebar" id="cartSidebar">
-  <div class="cart-header">
-    <h3>Tu Carrito</h3>
-    <button class="cart-close" onclick="closeCart()">×</button>
-  </div>
-  <div class="cart-body" id="cartBody"></div>
-  <div class="cart-footer">
-    <div class="cart-total"><span>Subtotal:</span><strong id="cartTotal">0.00€</strong></div>
-    <div class="cart-pay-info">El pedido se enviará directamente al WhatsApp de la tienda para coordinar el pago por Bizum o Banco de forma humana.</div>
-    <button class="btn-checkout" onclick="checkout()">Realizar Pedido por WhatsApp</button>
-  </div>
-</div>
-
 </body>
 </html>
